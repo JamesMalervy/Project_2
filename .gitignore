@@ -1,0 +1,5 @@
+vendor
+.idea
+*.phar
+tests/coverage
+src/documentation

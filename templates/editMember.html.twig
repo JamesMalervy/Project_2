@@ -1,0 +1,59 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    page - Admin
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block projectsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+
+
+{#
+{{ text }}#}
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>StudentID</th>
+            <th>SupervisorID</th>
+            <th>ProjectID</th>
+            <th>Status</th>
+            <th>Past_Present</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+
+
+
+
+        {% for member in members %}
+
+            <tr>
+                <td>{{ member.id }}</td>
+                <td>{{ member.title }}</td>
+                <td>{{ member.studentId }}</td>
+                <td>{{ member.supervisorId }}</td>
+                <td>{{ member.projectId }}</td>
+                <td>{{ member.status }}</td>
+                <td>{{ member.pastPresent }}</td>
+                <td>{{ member.name }}</td>
+                <td><a href="/editMember/{{ member.id }}">edit</a></td>
+            </tr>
+
+
+        {% endfor %}
+
+
+
+    </table>
+
+
+
+{% endblock %}

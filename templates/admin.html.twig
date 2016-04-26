@@ -1,0 +1,69 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    page - Admin
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block projectsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+
+    <a href="/logout">logout</a>
+
+
+       <p>
+          You are logged in as {{ username }} !!!
+        </p>
+
+
+
+    <br>
+
+    <br>
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>StudentID</th>
+            <th>SupervisorID</th>
+            <th>ProjectID</th>
+            <th>Status</th>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Create</th>
+            <th>Delete</th>
+        </tr>
+
+
+
+
+        {% for member in members %}
+
+            <tr>
+                <td>{{ member.id }}</td>
+                <td>{{ member.title }}</td>
+                <td>{{ member.studentId }}</td>
+                <td>{{ member.supervisorId }}</td>
+                <td>{{ member.projectId }}</td>
+                <td>{{ member.status }}</td>
+                <td><a href="/detail/{{ member.id }}">{{ member.name }}</a></td>
+                <td><a href="/editMemberTableDisplay">Edit Members</a></td>
+                <td> <a href="/createMember">Create Members</a></td>
+                <td><a href="/deleteMemberTableDisplay">Delete Member</a></td>
+            </tr>
+
+
+        {% endfor %}
+
+
+
+    </table>
+
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends '_base.html.twig' %}
+
+{% block title %}
+    page - project details
+{% endblock %}
+
+
+{# ------------------------------------------------- #}
+{% block membersNavStyle %}current_page{% endblock %}
+
+
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<!-- start table for displaying individual details -->
+<h2>Details of one Student</h2>
+
+ <table>
+
+     <tr>
+         <th>Id</th>
+         <th>Student Number</th>
+         <th>Supervisor</th>
+         <th>Project</th>
+         <th>Grade</th>
+         <th>Name</th>
+     </tr>
+
+     <tr>
+         <td> {{ students.id }}</td>
+         <td> {{ students.studentNumber }}</td>
+         <td> {{ students.supervisor }}</td>
+         <td> {{ students.project }}</td>
+         <td> {{  students.status}}</td>
+         <td> {{  students.grade}}</td>
+         <td> {{  students.name}}</td>
+     </tr>
+ </table>
+
+
+{% endblock %}
