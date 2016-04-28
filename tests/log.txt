@@ -1,15 +1,23 @@
 TAP version 13
 ok 1 - Itb\Test::testToSeeIfTestFileIsSetUpRight
-ok 2 - Itb\memberTest::testGetId
-ok 3 - Itb\memberTest::testGetTitle
-ok 4 - Itb\memberTest::testGetStudentId
-ok 5 - Itb\memberTest::testGetPassword
-ok 6 - Itb\memberTest::testProjectId
-ok 7 - Itb\memberTest::testStatus
-ok 8 - Itb\memberTest::testName
-ok 9 - Itb\projectTest::testGetId
-ok 10 - Itb\projectTest::testGetSuperVisor
-ok 11 - Itb\projectTest::testGetGroup
-ok 12 - Itb\projectTest::testGetStatus
-ok 13 - Itb\projectTest::testTitle
-1..13
+ok 2 - Itb\logTest::testGetId
+ok 3 - Itb\logTest::testGetPassword
+ok 4 - Itb\logTest::testGetPosition
+ok 5 - Itb\memberTest::testGetId
+ok 6 - Itb\memberTest::testGetTitle
+ok 7 - Itb\memberTest::testGetStudentId
+ok 8 - Itb\memberTest::testGetPassword
+ok 9 - Itb\memberTest::testProjectId
+ok 10 - Itb\memberTest::testStatus
+ok 11 - Itb\memberTest::testName
+ok 12 - Itb\projectTest::testGetId
+ok 13 - Itb\projectTest::testGetSuperVisor
+ok 14 - Itb\projectTest::testGetGroup
+ok 15 - Itb\projectTest::testGetStatus
+ok 16 - Itb\projectTest::testTitle
+ok 17 - Itb\studentTest::testGetId
+ok 18 - Itb\studentTest::testGetSuperVisor
+ok 19 - Itb\studentTest::testGetProject
+ok 20 - Itb\studentTest::testGetGrade
+ok 21 - Itb\studentTest::testName
+1..21

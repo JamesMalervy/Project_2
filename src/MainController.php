@@ -6,15 +6,19 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-
+/**
+ * for method objects
+ * Class MainController
+ * @package Itb
+ */
 class MainController
 {
-    /**
-     * render the days page template
-     */
 
     /**
-     * render the About page template
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     * render member object
      */
     public function membersAction(Request $request, Application $app)
     {
@@ -32,6 +36,9 @@ class MainController
 
     /**
      * render the Index page template
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
      */
     public function indexAction(Request $request, Application $app)
     {
@@ -41,10 +48,12 @@ class MainController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+
     /**
      * @param Request $request
      * @param Application $app
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @return RedirectResponse
+     * log in action
      */
     public function logAction(Request $request, Application $app)
     {
@@ -107,6 +116,7 @@ class MainController
      * @param Request $request
      * @param Application $app
      * @return mixed
+     * render the admin page
      */
     public function adminPageAction(Request $request, Application $app)
     {
@@ -126,6 +136,12 @@ class MainController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     * render the student page
+     */
     public function studentPageAction(Request $request, Application $app)
     {
 
@@ -144,6 +160,12 @@ class MainController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     * render supervisor page
+     */
     public function supervisorPageAction(Request $request, Application $app)
     {
 
@@ -162,6 +184,12 @@ class MainController
     }
 
     // action for route:    /logout
+    /**
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     * logout action
+     */
     public function logoutAction(Request $request, Application $app)
     {
         // logout any existing user
@@ -182,6 +210,7 @@ class MainController
      * @param Application $app
      * @param $id
      * @return mixed
+     * render detail page
      */
     public function detailAction(Request $request, Application $app, $id)
     {
@@ -205,7 +234,7 @@ class MainController
      * not found error page
      * @param \Silex\Application $app
      * @param             $message
-     *
+     * deal with the error
      * @return mixed
      */
     public static function error404(Application $app, $message)
@@ -224,4 +253,80 @@ class MainController
      *  $app->abort(404, "Post $id does not exist.");
      * }
      */
+    /**
+     * @param $username
+     * @param $password
+     * @return bool
+     * Find Matching Username And Password
+     */
+     public static function canFindMatchingUsernameAndPassword($username, $password)
+    {
+        $user = Log::getOneByUsername($username);
+        // var_dump($user);
+        //die();
+        // if no record has this username, return FALSE
+        if(null == $user)
+        {
+            return false;
+        }
+
+        // hashed correct password
+        $hashedStoredPassword = $user->getPassword();
+
+        return password_verify($password, $hashedStoredPassword);
+    }
+
+    /**
+     * find the role
+     * @param $username
+     * @return bool
+     * find the user role
+     */
+    public static function FindingRole($username)
+    {
+        $user = Login::getOneByUsername($username);
+
+        if(null == $user)
+        {
+            return false;
+        }
+
+        // hashed correct password
+        //$hashedStoredPassword = $user->getPassword();
+
+        return $user->getPosition();
+    }
+
+    /**
+     * if record exists with $username, return User object for that record
+     * otherwise return 'null'
+     *
+     * @param $username
+     *
+     * @return mixed|null
+     */
+    /**
+     * get the user name
+     * @param $username
+     * @return null
+     * get one user by name
+     */
+    public static function getOneByUsername($username)
+    {
+        $db = new DatabaseManager();
+        $connection = $db->getDbh();
+
+        $sql = 'SELECT * FROM logins WHERE username=:username';
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':username', $username, \PDO::PARAM_STR);
+        $statement->setFetchMode(\PDO::FETCH_CLASS, __CLASS__);
+        $statement->execute();
+
+        if ($object = $statement->fetch())
+        {
+            return $object;
+        } else {
+            return null;
+        }
+    }
 }

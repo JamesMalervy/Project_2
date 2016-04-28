@@ -14,6 +14,11 @@ class Student  extends DatabaseTable
 {
     private $id;
     private $studentNumber;
+    private $supervisor;
+    private $project;
+    private $status;
+    private $grade;
+    private $name;
 
     /**
      * @return mixed
@@ -126,10 +131,6 @@ class Student  extends DatabaseTable
     {
         $this->name = $name;
     }
-    private $supervisor;
-    private $project;
-    private $status;
-    private $grade;
-    private $name;
+
 
 }

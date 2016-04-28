@@ -10,15 +10,40 @@ namespace Itb;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
+/**
+ * extends database
+ * Class Project
+ * @package Itb
+ */
 class Project extends DatabaseTable
 {
-    private $id;
-    private $supervisor;
-    private $group;
-    private $status;
-    private $title;
-
     /**
+     * id variable
+     * @var
+     */
+    private $id;
+    /**
+     * supervisor varaiable
+     * @var
+     */
+    private $supervisor;
+    /**
+     * group variable
+     * @var
+     */
+    private $group;
+    /**
+     * status variable
+     * @var
+     */
+    private $status;
+    /**
+     * title varaible
+     * @var
+     */
+    private $title;
+    /**
+     * get id
      * @return mixed
      */
     public function getId()
@@ -27,6 +52,7 @@ class Project extends DatabaseTable
     }
 
     /**
+     * set id
      * @param mixed $id
      */
     public function setId($id)
@@ -35,6 +61,7 @@ class Project extends DatabaseTable
     }
 
     /**
+     * get supervisor
      * @return mixed
      */
     public function getSupervisor()
@@ -43,6 +70,7 @@ class Project extends DatabaseTable
     }
 
     /**
+     * set supervisor
      * @param mixed $supervisor
      */
     public function setSupervisor($supervisor)
@@ -51,6 +79,7 @@ class Project extends DatabaseTable
     }
 
     /**
+     * get the group
      * @return mixed
      */
     public function getGroup()
@@ -59,6 +88,7 @@ class Project extends DatabaseTable
     }
 
     /**
+     * set the group
      * @param mixed $group
      */
     public function setGroup($group)
@@ -67,6 +97,7 @@ class Project extends DatabaseTable
     }
 
     /**
+     * get the status
      * @return mixed
      */
     public function getStatus()
@@ -75,6 +106,7 @@ class Project extends DatabaseTable
     }
 
     /**
+     * set the status
      * @param mixed $status
      */
     public function setStatus($status)
@@ -83,6 +115,7 @@ class Project extends DatabaseTable
     }
 
     /**
+     * get the title
      * @return mixed
      */
     public function getTitle()
@@ -91,6 +124,7 @@ class Project extends DatabaseTable
     }
 
     /**
+     * set the title
      * @param mixed $title
      */
     public function setTitle($title)

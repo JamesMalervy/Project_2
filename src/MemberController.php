@@ -1,19 +1,28 @@
 <?php
+/**
+ * The member controller class
+ */
 namespace Itb;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-
+/**
+ * controller for member objects
+ * Class MemberController
+ * @package Itb
+ * summary for this class
+ */
 class MemberController
 {
-    /**
-     * render the days page template
-     */
+
 
     /**
-     * render the About page template
+     * render the edit page
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
      */
     public function editMemberTableDisplayAction(Request $request, Application $app)
     {
@@ -29,7 +38,13 @@ class MemberController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
-
+    /**
+     * edit the member
+     * @param Request $request
+     * @param Application $app
+     * @param $id
+     * @return mixed
+     */
     public function editMemberDisplayAction(Request $request, Application $app, $id)
     {
 
@@ -45,6 +60,12 @@ class MemberController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * edit a members details
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function editMemberDetailsAction(Request $request, Application $app)
     {
         $user = $app['session']->get('user');
@@ -94,12 +115,14 @@ class MemberController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * render create member page
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function createMemberAction(Request $request, Application $app)
     {
-
-
-
-
         $argsArray = [
 
         ];
@@ -109,7 +132,12 @@ class MemberController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
-
+    /**
+     * create a new member in admin page
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function newMemberAction(Request $request, Application $app)
     {
 
@@ -163,7 +191,12 @@ class MemberController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
-
+    /**
+     * delet member from table
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
     public function deleteMemberTableDisplayAction(Request $request, Application $app)
     {
 
@@ -178,6 +211,13 @@ class MemberController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     *  delete member
+     * @param Request $request
+     * @param Application $app
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
     public function deleteMemberAction(Request $request, Application $app, $id)
     {
 

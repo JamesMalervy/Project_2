@@ -10,22 +10,60 @@ namespace Itb;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
+/**
+ * Class Member
+ * @package Itb
+ * extends the database
+ */
 class Member extends DatabaseTable
 {
+    /**
+     * @var
+     * store id
+     */
     private $id;
+    /**
+     * @var
+     * title variable
+     */
     private $title;
+    /**
+     * student id
+     * @var
+     */
     private $studentId;
    // private $supervisorId;
+    /**
+     * @var
+     * password variable
+     */
     private $password;
+    /**
+     * @var
+     * the project id
+     */
     private $projectId;
+    /**
+     * @var
+     * status variable
+     */
     private $status;
+    /**
+     * @var
+     * past of present project
+     */
     private $pastPresent;
+    /**
+     * @var
+     * variable name
+     */
     private $name;
 
 
 
     /**
      * @return mixed
+     * get passt or presnt
      */
     public function getPastPresent()
     {
@@ -34,6 +72,7 @@ class Member extends DatabaseTable
 
     /**
      * @param mixed $pastPresent
+     * set the past or present
      */
     public function setPastPresent($pastPresent)
     {
@@ -42,6 +81,7 @@ class Member extends DatabaseTable
 
     /**
      * @return mixed
+     * get the name
      */
     public function getName()
     {
@@ -50,6 +90,7 @@ class Member extends DatabaseTable
 
     /**
      * @param mixed $name
+     * set the name
      */
     public function setName($name)
     {
@@ -58,6 +99,7 @@ class Member extends DatabaseTable
 
     /**
      * @return mixed
+     * get the status
      */
     public function getStatus()
     {
@@ -66,6 +108,7 @@ class Member extends DatabaseTable
 
     /**
      * @param mixed $status
+     * return status
      */
     public function setStatus($status)
     {
@@ -73,6 +116,7 @@ class Member extends DatabaseTable
     }
 
     /**
+     * get title
      * @return mixed
      */
     public function getTitle()
@@ -82,6 +126,7 @@ class Member extends DatabaseTable
 
     /**
      * @param mixed $title
+     * set the title
      */
     public function setTitle($title)
     {
@@ -90,6 +135,7 @@ class Member extends DatabaseTable
 
     /**
      * @return mixedadmin.html.twig
+     * get the id
      */
     public function getId()
     {
@@ -98,6 +144,7 @@ class Member extends DatabaseTable
 
     /**
      * @param mixed $id
+     * set hte id
      */
     public function setId($id)
     {
@@ -106,6 +153,7 @@ class Member extends DatabaseTable
 
     /**
      * @return mixed
+     * set student
      */
     public function getStudentId()
     {
@@ -114,6 +162,7 @@ class Member extends DatabaseTable
 
     /**
      * @param mixed $studentId
+     * set the student
      */
     public function setStudentId($studentId)
     {
@@ -134,6 +183,7 @@ class Member extends DatabaseTable
 
     /**
      * @return mixed
+     * get password
      */
     public function getPassword()
     {
@@ -142,6 +192,7 @@ class Member extends DatabaseTable
 
     /**
      * @param mixed $password
+     * set the password
      */
     public function setPassword($password)
     {
@@ -150,6 +201,7 @@ class Member extends DatabaseTable
 
     /**
      * @return mixed
+     * get the project id
      */
     public function getProjectId()
     {
@@ -158,6 +210,7 @@ class Member extends DatabaseTable
 
     /**
      * @param mixed $projectId
+     * set the project id
      */
     public function setProjectId($projectId)
     {

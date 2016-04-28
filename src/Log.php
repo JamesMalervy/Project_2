@@ -11,15 +11,32 @@ namespace Itb;
 use Mattsmithdev\PdoCrud\DatabaseManager;
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
+/**
+ * Class Log
+ * @package Itb
+ */
 class Log extends DatabaseTable
 {
+    /**
+     * integer variable
+     * @var
+     */
     private $id;
+    /**
+     * password variable
+     * @var
+     */
     private $password;
+    /**
+     * position Varaiable
+     * @var
+     */
     private $position;
 
 
 
     /**
+     * get the id
      * @return mixed
      */
     public function getId()
@@ -28,6 +45,7 @@ class Log extends DatabaseTable
     }
 
     /**
+     * set id
      * @param mixed $id
      */
     public function setId($id)
@@ -44,6 +62,7 @@ class Log extends DatabaseTable
     }
 
     /**
+     * set the Position
      * @param mixed $position
      */
     public function setPosition($position)
@@ -52,6 +71,7 @@ class Log extends DatabaseTable
     }
 
     /**
+     * get the password
      * @return mixed
      */
     public function getPassword()
@@ -59,72 +79,17 @@ class Log extends DatabaseTable
         return $this->password;
     }
 
-    /**********************************************************/
+    /**
+     * @param $password
+     * set the password
+     */
    public function setPassword($password)
     {
         $hashedPassword=password_hash($password, PASSWORD_DEFAULT);
         $this->password = $hashedPassword;
     }
 
-    public static function canFindMatchingUsernameAndPassword($username, $password)
-    {
-        $user = Log::getOneByUsername($username);
-        // var_dump($user);
-        //die();
-        // if no record has this username, return FALSE
-        if(null == $user)
-        {
-            return false;
-        }
 
-        // hashed correct password
-        $hashedStoredPassword = $user->getPassword();
-
-        return password_verify($password, $hashedStoredPassword);
-    }
-
-    public static function FindingRole($username)
-    {
-        $user = Login::getOneByUsername($username);
-
-        if(null == $user)
-        {
-            return false;
-        }
-
-        // hashed correct password
-        //$hashedStoredPassword = $user->getPassword();
-
-        return $user->getPosition();
-    }
-
-    /**
-     * if record exists with $username, return User object for that record
-     * otherwise return 'null'
-     *
-     * @param $username
-     *
-     * @return mixed|null
-     */
-
-    public static function getOneByUsername($username)
-    {
-        $db = new DatabaseManager();
-        $connection = $db->getDbh();
-
-        $sql = 'SELECT * FROM logins WHERE username=:username';
-        $statement = $connection->prepare($sql);
-        $statement->bindParam(':username', $username, \PDO::PARAM_STR);
-        $statement->setFetchMode(\PDO::FETCH_CLASS, __CLASS__);
-        $statement->execute();
-
-        if ($object = $statement->fetch())
-        {
-            return $object;
-        } else {
-            return null;
-        }
-    }
 }
 
 
