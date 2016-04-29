@@ -1,6 +1,13 @@
 <?php
+/**
+ * utility class
+ */
 namespace Itb;
 
+/**
+ * Class Utility
+ * @package Itb
+ */
 class Utility
 {
     /**
@@ -12,7 +19,7 @@ class Utility
      *
      * input:   Mattsmithdev\Samples, hello/name
      * output:  Mattsmithdev\Samples\HelloController::nameAction
-     *
+     *@param $shortName
      * @param $shortName controller and action name sepaerate by "/"
      * @return string namespace, controller class name plus :: plus action name
      */
@@ -27,5 +34,3 @@ class Utility
         return $namespaceClassAction;
     }
 }
-
-

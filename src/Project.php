@@ -131,6 +131,4 @@ class Project extends DatabaseTable
     {
         $this->title = $title;
     }
-
-
 }

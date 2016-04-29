@@ -18,13 +18,14 @@ use Mattsmithdev\PdoCrud\DatabaseTable;
 class Member extends DatabaseTable
 {
     /**
+     *store id
      * @var
-     * store id
      */
     private $id;
     /**
-     * @var
      * title variable
+     * @var
+     *
      */
     private $title;
     /**
@@ -34,36 +35,42 @@ class Member extends DatabaseTable
     private $studentId;
    // private $supervisorId;
     /**
-     * @var
      * password variable
+     * @var
+     *
      */
     private $password;
     /**
-     * @var
      * the project id
+     * @var
+     *
      */
     private $projectId;
     /**
-     * @var
      * status variable
+     * @var
+     *
      */
     private $status;
     /**
-     * @var
      * past of present project
+     * @var
+     *
      */
     private $pastPresent;
     /**
-     * @var
      * variable name
+     * @var
+     *
      */
     private $name;
 
 
 
     /**
-     * @return mixed
      * get passt or presnt
+     * @return mixed
+     *
      */
     public function getPastPresent()
     {
@@ -71,8 +78,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @param mixed $pastPresent
      * set the past or present
+     * @param mixed $pastPresent
+     *
      */
     public function setPastPresent($pastPresent)
     {
@@ -80,8 +88,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @return mixed
      * get the name
+     * @return mixed
+     *
      */
     public function getName()
     {
@@ -89,8 +98,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @param mixed $name
      * set the name
+     * @param mixed $name
+     *
      */
     public function setName($name)
     {
@@ -98,8 +108,9 @@ class Member extends DatabaseTable
     }
 
     /**
+     *  get the status
      * @return mixed
-     * get the status
+     *
      */
     public function getStatus()
     {
@@ -107,8 +118,9 @@ class Member extends DatabaseTable
     }
 
     /**
+     *  return status
      * @param mixed $status
-     * return status
+     *
      */
     public function setStatus($status)
     {
@@ -125,8 +137,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @param mixed $title
      * set the title
+     * @param mixed $title
+     *
      */
     public function setTitle($title)
     {
@@ -134,8 +147,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @return mixedadmin.html.twig
      * get the id
+     * @return mixedadmin.html.twig
+     *
      */
     public function getId()
     {
@@ -143,6 +157,7 @@ class Member extends DatabaseTable
     }
 
     /**
+     * get the id
      * @param mixed $id
      * set hte id
      */
@@ -152,8 +167,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @return mixed
      * set student
+     * @return mixed
+     *
      */
     public function getStudentId()
     {
@@ -161,8 +177,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @param mixed $studentId
      * set the student
+     * @param mixed $studentId
+     *
      */
     public function setStudentId($studentId)
     {
@@ -182,8 +199,9 @@ class Member extends DatabaseTable
     }*/
 
     /**
-     * @return mixed
      * get password
+     * @return mixed
+     *
      */
     public function getPassword()
     {
@@ -191,8 +209,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @param mixed $password
      * set the password
+     * @param mixed $password
+     *
      */
     public function setPassword($password)
     {
@@ -200,8 +219,9 @@ class Member extends DatabaseTable
     }
 
     /**
-     * @return mixed
      * get the project id
+     * @return mixed
+     *
      */
     public function getProjectId()
     {
@@ -209,12 +229,12 @@ class Member extends DatabaseTable
     }
 
     /**
+     *  set the project id
      * @param mixed $projectId
-     * set the project id
+     *
      */
     public function setProjectId($projectId)
     {
         $this->projectId = $projectId;
     }
-
 }

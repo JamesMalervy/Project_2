@@ -1,4 +1,7 @@
 <?php
+/**
+ * summary for main
+ */
 namespace Itb;
 
 use Silex\Application;
@@ -15,14 +18,14 @@ class MainController
 {
 
     /**
+     * render member object
      * @param Request $request
      * @param Application $app
      * @return mixed
-     * render member object
+     *
      */
     public function membersAction(Request $request, Application $app)
     {
-
         $member = Member::getAll();
 
 
@@ -50,14 +53,15 @@ class MainController
 
 
     /**
+     *  log in action
      * @param Request $request
      * @param Application $app
      * @return RedirectResponse
-     * log in action
+     *
      */
     public function logAction(Request $request, Application $app)
     {
-       // $argsArray = [];
+        // $argsArray = [];
         $paramsPost = $request->request->all();
         $id = $paramsPost['id'];
         $password = $paramsPost['password'];
@@ -69,8 +73,9 @@ class MainController
         $users = Log::searchByColumn('position', $sanitId);
         $user = $users[0];
 
-        if(!password_verify($password, $user->getPassword()))
+        if (!password_verify($password, $user->getPassword())) {
             return $app->redirect("/");
+        }
 
 
         // $user = \Itb\Log::getOneById($sanitId);
@@ -113,17 +118,17 @@ class MainController
     }
 
     /**
+     * render the admin page
      * @param Request $request
      * @param Application $app
      * @return mixed
-     * render the admin page
+     *
      */
     public function adminPageAction(Request $request, Application $app)
     {
+        $user = $app['session']->get('user');
 
-     $user = $app['session']->get('user');
-
-     $members = Member::getAll();
+        $members = Member::getAll();
 
 
         $argsArray = array(
@@ -137,14 +142,14 @@ class MainController
     }
 
     /**
+     * render the student page
      * @param Request $request
      * @param Application $app
      * @return mixed
-     * render the student page
+     *
      */
     public function studentPageAction(Request $request, Application $app)
     {
-
         $user = $app['session']->get('user');
 
         $students = Student::getAll();
@@ -161,14 +166,14 @@ class MainController
     }
 
     /**
+     * render supervisor page
      * @param Request $request
      * @param Application $app
      * @return mixed
-     * render supervisor page
+     *
      */
     public function supervisorPageAction(Request $request, Application $app)
     {
-
         $user = $app['session']->get('user');
 
 
@@ -185,15 +190,16 @@ class MainController
 
     // action for route:    /logout
     /**
+     * logout action
      * @param Request $request
      * @param Application $app
      * @return mixed
-     * logout action
+     *
      */
     public function logoutAction(Request $request, Application $app)
     {
         // logout any existing user
-        $app['session']->set('user', null );
+        $app['session']->set('user', null);
 
         // redirect to home page
 //        return $app->redirect('/');
@@ -202,15 +208,15 @@ class MainController
         // ------------
         $templateName = 'index';
         return $app['twig']->render($templateName . '.html.twig', []);
-
     }
 
     /**
+     * render detail page
      * @param Request $request
      * @param Application $app
      * @param $id
      * @return mixed
-     * render detail page
+     *
      */
     public function detailAction(Request $request, Application $app, $id)
     {
@@ -254,27 +260,27 @@ class MainController
      * }
      */
     /**
+     *  Find Matching Username And Password
      * @param $username
      * @param $password
      * @return bool
-     * Find Matching Username And Password
+     *
      */
      public static function canFindMatchingUsernameAndPassword($username, $password)
-    {
-        $user = Log::getOneByUsername($username);
+     {
+         $user = Log::getOneByUsername($username);
         // var_dump($user);
         //die();
         // if no record has this username, return FALSE
-        if(null == $user)
-        {
+        if (null == $user) {
             return false;
         }
 
         // hashed correct password
         $hashedStoredPassword = $user->getPassword();
 
-        return password_verify($password, $hashedStoredPassword);
-    }
+         return password_verify($password, $hashedStoredPassword);
+     }
 
     /**
      * find the role
@@ -286,8 +292,7 @@ class MainController
     {
         $user = Login::getOneByUsername($username);
 
-        if(null == $user)
-        {
+        if (null == $user) {
             return false;
         }
 
@@ -322,8 +327,7 @@ class MainController
         $statement->setFetchMode(\PDO::FETCH_CLASS, __CLASS__);
         $statement->execute();
 
-        if ($object = $statement->fetch())
-        {
+        if ($object = $statement->fetch()) {
             return $object;
         } else {
             return null;

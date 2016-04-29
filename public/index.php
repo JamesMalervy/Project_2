@@ -40,6 +40,7 @@ $app->post('/newMember', \Itb\Utility::controller('Itb', 'member/newMember'));
 $app->get('/deleteMemberTableDisplay', \Itb\Utility::controller('Itb', 'member/deleteMemberTableDisplay'));
 $app->get('/deleteMember/{id}', \Itb\Utility::controller('Itb', 'member/deleteMember'));
 $app->get('/matt/{id}', \Itb\Utility::controller('Itb', 'main/matt'));
+$app->post('/changePicture', \Itb\Utility::controller('Itb', 'student/changePicture'));
 
 
   /*switch ($action){

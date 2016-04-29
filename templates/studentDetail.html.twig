@@ -39,4 +39,23 @@
  </table>
 
 
+    <form method = "POST"
+
+          action="/changePicture" enctype="multipart/form-data">
+
+        Image Upload:
+
+        <br>
+          <input type="hidden" name = "id" value="{{ students.id }}">
+         <input type ="file" name="image">
+        <br>
+        <input type = "submit" value="Upload Picture">
+
+
+    </form>
+
+
+    <img src="images/{{  students.image}}" alt="image" style="width: 200px; height: 200px;">
+
+
 {% endblock %}

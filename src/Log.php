@@ -54,6 +54,7 @@ class Log extends DatabaseTable
     }
 
     /**
+     * get position
      * @return mixed
      */
     public function getPosition()
@@ -80,19 +81,13 @@ class Log extends DatabaseTable
     }
 
     /**
-     * @param $password
      * set the password
+     * @param $password
+     *
      */
    public function setPassword($password)
-    {
-        $hashedPassword=password_hash($password, PASSWORD_DEFAULT);
-        $this->password = $hashedPassword;
-    }
-
-
+   {
+       $hashedPassword=password_hash($password, PASSWORD_DEFAULT);
+       $this->password = $hashedPassword;
+   }
 }
-
-
-
-
-

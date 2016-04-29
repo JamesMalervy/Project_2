@@ -26,7 +26,6 @@ class MemberController
      */
     public function editMemberTableDisplayAction(Request $request, Application $app)
     {
-
         $member = Member::getAll();
 
 
@@ -47,7 +46,6 @@ class MemberController
      */
     public function editMemberDisplayAction(Request $request, Application $app, $id)
     {
-
         $memberRow = Member::getOneById($id);
 
 
@@ -75,11 +73,11 @@ class MemberController
         $paramsPost = $request->request->all();
         $title = $paramsPost['title'];
         $studentId = $paramsPost['studentId'];
-         $supervisorId = $paramsPost['supervisorId'];
-         $password = $paramsPost['password'];
-         $projectId = $paramsPost['projectId'];
-         $status = $paramsPost['status'];
-         $name = $paramsPost['name'];
+        $supervisorId = $paramsPost['supervisorId'];
+        $password = $paramsPost['password'];
+        $projectId = $paramsPost['projectId'];
+        $status = $paramsPost['status'];
+        $name = $paramsPost['name'];
 
         $title = filter_var($title, FILTER_SANITIZE_STRING);
         $studentId = filter_var($studentId, FILTER_SANITIZE_STRING);
@@ -101,7 +99,7 @@ class MemberController
         $member->setStatus($status);
         $member->setName($name);
 
-       $succesfullUpdate = Member::update($member);
+        $succesfullUpdate = Member::update($member);
 
         $member = Member::getAll();
 
@@ -140,9 +138,6 @@ class MemberController
      */
     public function newMemberAction(Request $request, Application $app)
     {
-
-
-
         $paramsPost = $request->request->all();
         $id = $paramsPost['id'];
         $title = $paramsPost['title'];
@@ -199,7 +194,6 @@ class MemberController
      */
     public function deleteMemberTableDisplayAction(Request $request, Application $app)
     {
-
         $member = Member::getAll();
 
 
@@ -220,16 +214,8 @@ class MemberController
      */
     public function deleteMemberAction(Request $request, Application $app, $id)
     {
-
         $deleteSuccesfull = Member::delete($id);
 
         return $app->redirect('/admin');
-
-
-
     }
-
-
-
-
 }

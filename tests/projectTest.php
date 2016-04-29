@@ -1,9 +1,8 @@
 <?php
 
 namespace Itb;
+
 use Itb\Project;
-
-
 
 class projectTest extends \PHPUnit_Framework_TestCase
 {
@@ -21,15 +20,15 @@ class projectTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function testGetSuperVisor()
+    public function testGetSupervisor()
     {
         // Arrange
         $project = new Project();
-        $project->setTitle("Supervisor");
+        $project->setSupervisor("Supervisor");
         $expectedResult = "Supervisor";
 
         // Act
-        $result = $project->getTitle();
+        $result = $project->getSupervisor();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
@@ -49,7 +48,7 @@ class projectTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-   public function testGetStatus()
+    public function testGetStatus()
     {
         // Arrange
         $project = new Project();
@@ -76,6 +75,4 @@ class projectTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-
-
 }

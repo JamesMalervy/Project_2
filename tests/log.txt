@@ -9,15 +9,18 @@ ok 7 - Itb\memberTest::testGetStudentId
 ok 8 - Itb\memberTest::testGetPassword
 ok 9 - Itb\memberTest::testProjectId
 ok 10 - Itb\memberTest::testStatus
-ok 11 - Itb\memberTest::testName
-ok 12 - Itb\projectTest::testGetId
-ok 13 - Itb\projectTest::testGetSuperVisor
-ok 14 - Itb\projectTest::testGetGroup
-ok 15 - Itb\projectTest::testGetStatus
-ok 16 - Itb\projectTest::testTitle
-ok 17 - Itb\studentTest::testGetId
-ok 18 - Itb\studentTest::testGetSuperVisor
-ok 19 - Itb\studentTest::testGetProject
-ok 20 - Itb\studentTest::testGetGrade
-ok 21 - Itb\studentTest::testName
-1..21
+ok 11 - Itb\memberTest::testPastPresent
+ok 12 - Itb\memberTest::testName
+ok 13 - Itb\projectTest::testGetId
+ok 14 - Itb\projectTest::testGetSupervisor
+ok 15 - Itb\projectTest::testGetGroup
+ok 16 - Itb\projectTest::testGetStatus
+ok 17 - Itb\projectTest::testTitle
+ok 18 - Itb\studentTest::testGetId
+ok 19 - Itb\studentTest::testGetSuperVisor
+ok 20 - Itb\studentTest::testGetProject
+ok 21 - Itb\studentTest::testGetStudentNumber
+ok 22 - Itb\studentTest::testGetGrade
+ok 23 - Itb\studentTest::testGetStatus
+ok 24 - Itb\studentTest::testGetName
+1..24

@@ -13,7 +13,7 @@ footer {
 }
 
 table, th, td, tr {
-    border: solid yellow 1px;
+    border: 0.1rem solid yellow;
     border-collapse: collapse;
     color: yellow;
     background-color: black;
@@ -62,4 +62,12 @@ header section {
 
 header section {
     text-align: right;
+}
+form {
+    background-color: black;
+    border: 0.1rem solid yellow;
+    color: white;
+    padding: 1rem;
+    width: 350px;
+    margin-left: 20px;
 }

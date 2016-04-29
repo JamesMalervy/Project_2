@@ -5,15 +5,23 @@
  * Date: 01/04/2016
  * Time: 23:53
  */
-
+/**
+ * project controller
+ */
 namespace Itb;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class ProjectController
+ * @package Itb
+ * Class project methods
+ */
 class ProjectController
 {
     /**
+     * render projects
      * @param Request $request
      * @param Application $app
      * @return mixed
@@ -31,6 +39,7 @@ class ProjectController
     }
 
     /**
+     * detail action of table
      * @param Request $request
      * @param Application $app
      * @param $id
@@ -47,6 +56,4 @@ class ProjectController
         $template = 'projectDetail';
         return $app['twig']->render($template . '.html.twig', $argsArray);
     }
-
-
 }

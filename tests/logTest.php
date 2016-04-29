@@ -1,9 +1,8 @@
 <?php
 
 namespace Itb;
+
 use Itb\Log;
-
-
 
 class logTest extends \PHPUnit_Framework_TestCase
 {
@@ -29,7 +28,7 @@ class logTest extends \PHPUnit_Framework_TestCase
         $password = "password";
         $expectedResult = $password;
 
-        $log->setPassword( $expectedResult);
+        $log->setPassword($expectedResult);
 
         // Act
         $result = $log->getPassword();
@@ -51,6 +50,4 @@ class logTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-
-
 }

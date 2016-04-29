@@ -1,9 +1,8 @@
 <?php
 
 namespace Itb;
+
 use Itb\Member;
-
-
 
 class memberTest extends \PHPUnit_Framework_TestCase
 {
@@ -49,7 +48,7 @@ class memberTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-   public function testGetPassword()
+    public function testGetPassword()
     {
         // Arrange
         $member = new Member();
@@ -79,7 +78,7 @@ class memberTest extends \PHPUnit_Framework_TestCase
 
     public function testStatus()
     {
-         // Arrange
+        // Arrange
         $member = new Member();
         $member->setStatus("status");
         $expectedResult = "status";
@@ -89,27 +88,25 @@ class memberTest extends \PHPUnit_Framework_TestCase
 
         // Assert
         $this->assertEquals($expectedResult, $result);
-
     }
 
-    public function PastPresent()
+    public function testPastPresent()
     {
-       // Arrange
+        // Arrange
         $member = new Member();
-        $member->setPastPresent("Timeline");
-        $expectedResult = "Timeline";
+        $member->setPastPresent("past");
+        $expectedResult = "past";
 
         // Act
         $result = $member->getPastPresent();
 
         // Assert
         $this->assertEquals($expectedResult, $result);
-
     }
 
     public function testName()
     {
-       // Arrange
+        // Arrange
         $member = new Member();
         $member->setName("name");
         $expectedResult = "name";
@@ -119,8 +116,5 @@ class memberTest extends \PHPUnit_Framework_TestCase
 
         // Assert
         $this->assertEquals($expectedResult, $result);
-
     }
-
-
 }

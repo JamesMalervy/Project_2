@@ -10,17 +10,63 @@ namespace Itb;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
+/**
+ * Class Student
+ * @package Itb
+ * extends database
+ */
 class Student  extends DatabaseTable
 {
+    /**
+     * id variable
+     * @var
+     */
     private $id;
+    /**
+     * student number
+     * @var
+     */
+
+    /**
+     * image
+     * @var
+     */
+    private $image;
+
+
+    /**
+     * student number
+     * @var string
+     */
     private $studentNumber;
+    /**
+     * supervisor
+     * @var
+     */
     private $supervisor;
+    /**
+     * project
+     * @var
+     */
     private $project;
+    /**
+     * status
+     * @var
+     */
     private $status;
+    /**
+     * grade
+     * @var
+     */
     private $grade;
+    /**
+     * name
+     * @var
+     */
     private $name;
 
     /**
+     * get id
      * @return mixed
      */
     public function getId()
@@ -29,6 +75,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * set id
      * @param mixed $id
      */
     public function setId($id)
@@ -37,6 +84,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * get student number
      * @return mixed
      */
     public function getStudentNumber()
@@ -45,6 +93,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * set student number
      * @param mixed $studentNumber
      */
     public function setStudentNumber($studentNumber)
@@ -53,6 +102,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * set suopervisor
      * @return mixed
      */
     public function getSupervisor()
@@ -61,6 +111,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * set supervisor
      * @param mixed $supervisor
      */
     public function setSupervisor($supervisor)
@@ -69,6 +120,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * get the project
      * @return mixed
      */
     public function getProject()
@@ -77,6 +129,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * set project
      * @param mixed $project
      */
     public function setProject($project)
@@ -85,6 +138,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * get status
      * @return mixed
      */
     public function getStatus()
@@ -93,6 +147,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * set status
      * @param mixed $status
      */
     public function setStatus($status)
@@ -101,6 +156,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * get grade
      * @return mixed
      */
     public function getGrade()
@@ -109,6 +165,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * set grade
      * @param mixed $grade
      */
     public function setGrade($grade)
@@ -117,6 +174,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * get name
      * @return mixed
      */
     public function getName()
@@ -125,6 +183,7 @@ class Student  extends DatabaseTable
     }
 
     /**
+     * set name
      * @param mixed $name
      */
     public function setName($name)
@@ -132,5 +191,21 @@ class Student  extends DatabaseTable
         $this->name = $name;
     }
 
+    /**
+     * set image
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 
+    /**
+     * set image
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
 }

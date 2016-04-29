@@ -1,9 +1,8 @@
 <?php
 
 namespace Itb;
+
 use Itb\Student;
-
-
 
 class studentTest extends \PHPUnit_Framework_TestCase
 {
@@ -49,7 +48,21 @@ class studentTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-   public function testGetGrade()
+    public function testGetStudentNumber()
+    {
+        // Arrange
+        $student = new Student();
+        $student->setStudentNumber("GameGraphics");
+        $expectedResult = "GameGraphics";
+
+        // Act
+        $result = $student->getStudentNumber();
+
+        // Assert
+        $this->assertEquals($expectedResult, $result);
+    }
+
+    public function testGetGrade()
     {
         // Arrange
         $student = new Student();
@@ -63,7 +76,22 @@ class studentTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function testName()
+    public function testGetStatus()
+    {
+        // Arrange
+        $student = new Student();
+        $student->setStatus("status");
+        $expectedResult = "status";
+
+        // Act
+        $result = $student->getStatus();
+
+        // Assert
+        $this->assertEquals($expectedResult, $result);
+    }
+
+
+    public function testGetName()
     {
         // Arrange
         $student = new Student();
@@ -76,6 +104,4 @@ class studentTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
-
-
 }
