@@ -180,6 +180,7 @@ class Supervisor extends DatabaseTable
     /**
      * set the publication
      * @param mixed $publication
+     * not shown on coverage
      */
     public function setPublication($publication)
     {

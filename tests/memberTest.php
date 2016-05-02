@@ -34,12 +34,12 @@ class memberTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function testGetStudentId()
+    public function testGetMemberId()
     {
         // Arrange
         $member = new Member();
-        $member->setStudentId("Student");
-        $expectedResult = "Student";
+        $member->setStudentId("student");
+        $expectedResult = "student";
 
         // Act
         $result = $member->getStudentId();
@@ -113,6 +113,33 @@ class memberTest extends \PHPUnit_Framework_TestCase
 
         // Act
         $result = $member->getName();
+
+        // Assert
+        $this->assertEquals($expectedResult, $result);
+    }
+    public function testGetPublication()
+    {
+        // Arrange
+        $member = new Member();
+        $member->setPublication("book");
+        $expectedResult = "book";
+
+        // Act
+        $result = $member->getPublication();
+
+        // Assert
+        $this->assertEquals($expectedResult, $result);
+    }
+
+    public function testGetImage()
+    {
+        // Arrange
+        $member = new Member();
+        $member->setImage("picture");
+        $expectedResult = "picture";
+
+        // Act
+        $result = $member->getImage();
 
         // Assert
         $this->assertEquals($expectedResult, $result);

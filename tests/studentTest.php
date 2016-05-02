@@ -104,4 +104,31 @@ class studentTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($expectedResult, $result);
     }
+    public function testGetPublication()
+    {
+        // Arrange
+        $student = new Student();
+        $student->setPublication("book");
+        $expectedResult = "book";
+
+        // Act
+        $result = $student->getPublication();
+
+        // Assert
+        $this->assertEquals($expectedResult, $result);
+    }
+
+    public function testGetImage()
+    {
+        // Arrange
+        $student = new Student();
+        $student->setImage("picture");
+        $expectedResult = "picture";
+
+        // Act
+        $result = $student->getImage();
+
+        // Assert
+        $this->assertEquals($expectedResult, $result);
+    }
 }
