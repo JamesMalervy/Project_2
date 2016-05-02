@@ -16,7 +16,7 @@ $twig = new Twig_Environment($loader);
 // ------------
 $app = new Silex\Application();
 
-
+//$app['debug']=true;
 
 $app->register(new Silex\Provider\SessionServiceProvider());
 

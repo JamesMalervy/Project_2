@@ -14,7 +14,7 @@
 {% block main %}
 
 <!-- start table for displaying individual details -->
-<h2>Details of one Student</h2>
+<h2>Student Profile</h2>
 
  <table>
 
@@ -23,8 +23,10 @@
          <th>Student Number</th>
          <th>Supervisor</th>
          <th>Project</th>
+         <th>Status</th>
          <th>Grade</th>
          <th>Name</th>
+         <th>Edit</th>
      </tr>
 
      <tr>
@@ -35,9 +37,9 @@
          <td> {{  students.status}}</td>
          <td> {{  students.grade}}</td>
          <td> {{  students.name}}</td>
-     </tr>
+         <td><a href="/editStudent/{{ students.id }}">edit</a></td>
  </table>
-
+  <br>
 
     <form method = "POST"
 
@@ -47,13 +49,14 @@
 
         <br>
           <input type="hidden" name = "id" value="{{ students.id }}">
-         <input type ="file" name="image">
+
+         <input type ="file" name="image"> <br>
         <br>
         <input type = "submit" value="Upload Picture">
 
 
     </form>
-
+   <br>
 
     <img src="images/{{  students.image}}" alt="image" style="width: 200px; height: 200px;">
 

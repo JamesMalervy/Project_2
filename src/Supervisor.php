@@ -1,9 +1,12 @@
 <?php
 /**
+ * class for supervisor
+ */
+/**
  * Created by PhpStorm.
  * User: James
- * Date: 11/04/2016
- * Time: 17:08
+ * Date: 01/05/2016
+ * Time: 14:51
  */
 
 namespace Itb;
@@ -11,11 +14,10 @@ namespace Itb;
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
 /**
- * Class Student
+ * Class Supervisor
  * @package Itb
- * extends database
  */
-class Student  extends DatabaseTable
+class Supervisor extends DatabaseTable
 {
     /**
      * id variable
@@ -23,29 +25,12 @@ class Student  extends DatabaseTable
      */
     private $id;
     /**
-     * student number
+     * student variable
      * @var
      */
-
+    private $studentId;
     /**
-     * image
-     * @var
-     */
-    private $image;
-
-
-    /**
-     * student number
-     * @var string
-     */
-    private $studentNumber;
-    /**
-     * supervisor
-     * @var
-     */
-    private $supervisor;
-    /**
-     * project
+     * project variable
      * @var
      */
     private $project;
@@ -55,41 +40,28 @@ class Student  extends DatabaseTable
      */
     private $status;
     /**
-     * grade
+     * past or present
      * @var
      */
-    private $grade;
+    private $pastPresent;
     /**
-     * name
+     * past present
      * @var
      */
     private $name;
     /**
-     * publications
+     * variable for publications
      * @var
      */
     private $publication;
-
     /**
-     * get the publications
-     * @return mixed
+     * image
+     * @var
      */
-    public function getPublication()
-    {
-        return $this->publication;
-    }
+  //  private $image;
 
     /**
-     * set the publications
-     * @param mixed
-     */
-    public function setPublication($publication)
-    {
-        $this->publication = $publication;
-    }
-
-    /**
-     * get id
+     * get the id
      * @return mixed
      */
     public function getId()
@@ -98,7 +70,7 @@ class Student  extends DatabaseTable
     }
 
     /**
-     * set id
+     * set the id
      * @param mixed $id
      */
     public function setId($id)
@@ -107,39 +79,21 @@ class Student  extends DatabaseTable
     }
 
     /**
-     * get student number
+     * get student id
      * @return mixed
      */
-    public function getStudentNumber()
+    public function getStudentId()
     {
-        return $this->studentNumber;
+        return $this->studentId;
     }
 
     /**
-     * set student number
-     * @param mixed $studentNumber
+     * set the student id
+     * @param mixed $studentId
      */
-    public function setStudentNumber($studentNumber)
+    public function setStudentId($studentId)
     {
-        $this->studentNumber = $studentNumber;
-    }
-
-    /**
-     * set suopervisor
-     * @return mixed
-     */
-    public function getSupervisor()
-    {
-        return $this->supervisor;
-    }
-
-    /**
-     * set supervisor
-     * @param mixed $supervisor
-     */
-    public function setSupervisor($supervisor)
-    {
-        $this->supervisor = $supervisor;
+        $this->studentId = $studentId;
     }
 
     /**
@@ -152,7 +106,7 @@ class Student  extends DatabaseTable
     }
 
     /**
-     * set project
+     * set the project
      * @param mixed $project
      */
     public function setProject($project)
@@ -161,7 +115,7 @@ class Student  extends DatabaseTable
     }
 
     /**
-     * get status
+     * get the status
      * @return mixed
      */
     public function getStatus()
@@ -170,7 +124,7 @@ class Student  extends DatabaseTable
     }
 
     /**
-     * set status
+     * set the status
      * @param mixed $status
      */
     public function setStatus($status)
@@ -179,21 +133,21 @@ class Student  extends DatabaseTable
     }
 
     /**
-     * get grade
+     * get past present
      * @return mixed
      */
-    public function getGrade()
+    public function getPastPresent()
     {
-        return $this->grade;
+        return $this->pastPresent;
     }
 
     /**
-     * set grade
-     * @param mixed $grade
+     * set past present
+     * @param mixed $pastPresent
      */
-    public function setGrade($grade)
+    public function setPastPresent($pastPresent)
     {
-        $this->grade = $grade;
+        $this->pastPresent = $pastPresent;
     }
 
     /**
@@ -215,10 +169,28 @@ class Student  extends DatabaseTable
     }
 
     /**
-     * set image
+     * get the publication
      * @return mixed
      */
-    public function getImage()
+    public function getPublication()
+    {
+        return $this->publication;
+    }
+
+    /**
+     * set the publication
+     * @param mixed $publication
+     */
+    public function setPublication($publication)
+    {
+        $this->publication = $publication;
+    }
+
+    /**
+     * get image
+     * @return mixed
+     */
+/*    public function getImage()
     {
         return $this->image;
     }
@@ -227,8 +199,8 @@ class Student  extends DatabaseTable
      * set image
      * @param mixed $image
      */
-    public function setImage($image)
+ /*   public function setImage($image)
     {
         $this->image = $image;
-    }
+    } */
 }

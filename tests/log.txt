@@ -23,4 +23,11 @@ ok 21 - Itb\studentTest::testGetStudentNumber
 ok 22 - Itb\studentTest::testGetGrade
 ok 23 - Itb\studentTest::testGetStatus
 ok 24 - Itb\studentTest::testGetName
-1..24
+ok 25 - Itb\supervisorTest::testGetId
+ok 26 - Itb\supervisorTest::testGetStudentId
+ok 27 - Itb\supervisorTest::testGetProject
+ok 28 - Itb\supervisorTest::testGetStatus
+ok 29 - Itb\supervisorTest::testGetPastPresent
+ok 30 - Itb\supervisorTest::testGetName
+ok 31 - Itb\supervisorTest::testGetPublication
+1..31

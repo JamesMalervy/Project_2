@@ -1,0 +1,81 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    page - edit Supervisor
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block projectsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+{#-- create a new student/ supervisor--#}
+
+
+    <form method="post" action="/newSupervisor">
+
+
+
+        <p>
+             Id:
+            <br>
+            <input type="text" name="id" value=" " required>
+        </p>
+
+        <p>
+            Student ID:
+            <br>
+            <input type="text" name="studentId" value=" " required>
+        </p>
+
+        <p>
+            Project:
+            <br>
+            <input type="text" name="project" value=" " required>
+        </p>
+
+        <p>
+            Status:
+            <br>
+            <input type="text" name="status" value=" " required>
+        </p>
+
+        <p>
+        Past Present:
+        <br>
+        <input type="text" name="pastPresent" value=" " required>
+        </p>
+
+        <p>
+            Name:
+            <br>
+            <input type="text" name="name" value=" " required>
+        </p>
+
+        <p>
+            Publications:
+            <br>
+            <input type="text" name="publication" value=" " required>
+        </p>
+
+
+
+        <p>
+
+
+            <input type="submit"  value="Create">
+        </p>
+
+
+
+    </form>
+
+
+
+
+
+
+
+{% endblock %}

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Apr 12, 2016 at 02:42 AM
+-- Generation Time: May 02, 2016 at 05:35 AM
 -- Server version: 10.1.9-MariaDB-log
 -- PHP Version: 5.6.16
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `logs` (
   `id` int(12) NOT NULL,
-  `password` varchar(15) NOT NULL,
+  `password` varchar(60) NOT NULL,
   `position` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -37,9 +37,9 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`id`, `password`, `position`) VALUES
-(1, '01', 'admin'),
-(2, '02', 'student'),
-(3, '03', 'supervisor');
+(1, '$2y$10$HUhRkz/JxIcu/CxWIkUM0u.080SkhjfgpFGnXFLPsMrNf5VbqBm5i', 'admin'),
+(2, '$2y$10$X/XCVdG1f/jRKnVtMxQELOQkFVIcCEn/x6gWyxOqHDQ0gVuU43OIS', 'student'),
+(3, '$2y$10$PpETOqqkiQIVXJ/GT/O63uXPbo7n330uDfMRBjLrf6Q.AOup40YRG', 'supervisor');
 
 -- --------------------------------------------------------
 
@@ -54,16 +54,19 @@ CREATE TABLE `members` (
   `password` varchar(20) NOT NULL,
   `projectId` varchar(20) NOT NULL,
   `status` text NOT NULL,
-  `name` text NOT NULL
+  `pastPresent` text NOT NULL,
+  `name` text NOT NULL,
+  `publication` varchar(15) NOT NULL,
+  `image` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`id`, `title`, `studentId`, `password`, `projectId`, `status`, `name`) VALUES
-(1, 'Game Designer', 'b0001', 'password', '1.2', 'student', 'James Malervy'),
-(2, 'Game Graphics', '', '', 'sup101', 'supervisor', 'Mattsmith');
+INSERT INTO `members` (`id`, `title`, `studentId`, `password`, `projectId`, `status`, `pastPresent`, `name`, `publication`, `image`) VALUES
+(20, 'mrs', 'c001', 'n/a', 'project_2', 'student', '', 'jsean', '', ''),
+(21, ' se', ' de', ' es', ' de', ' cf', 'present', ' sid', '', '');
 
 -- --------------------------------------------------------
 
@@ -215,7 +218,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{"db":"project_1","table":"students"},{"db":"project_1","table":"student"},{"db":"project_1","table":"members"},{"db":"project_1","table":"logs"},{"db":"project_1","table":"projects"},{"db":"project_1","table":"publications"},{"db":"project_1","table":"pma__favorite"},{"db":"project_1","table":"login"}]');
+('root', '[{"db":"project_1","table":"supervisors"},{"db":"project_1","table":"logs"},{"db":"project_1","table":"supervisor"},{"db":"project_1","table":"members"},{"db":"project_1","table":"students"},{"db":"project_1","table":"publications"},{"db":"itb","table":"books"},{"db":"project_1","table":"student"},{"db":"project_1","table":"projects"},{"db":"project_1","table":"pma__favorite"}]');
 
 -- --------------------------------------------------------
 
@@ -317,6 +320,13 @@ CREATE TABLE `pma__userconfig` (
   `config_data` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User preferences storage for phpMyAdmin';
 
+--
+-- Dumping data for table `pma__userconfig`
+--
+
+INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
+('root', '2016-04-19 13:14:09', '{"collation_connection":"utf8mb4_unicode_ci"}');
+
 -- --------------------------------------------------------
 
 --
@@ -395,17 +405,19 @@ CREATE TABLE `students` (
   `project` varchar(20) NOT NULL,
   `status` text NOT NULL,
   `grade` varchar(15) NOT NULL,
-  `name` text NOT NULL
+  `name` text NOT NULL,
+  `publication` varchar(15) NOT NULL,
+  `image` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `studentNumber`, `supervisor`, `project`, `status`, `grade`, `name`) VALUES
-(1, 'B0001', 'Luke Raeside', 'Game Development', 'Present Project', '76 (B+)', 'James Malervy'),
-(2, 'B0002', 'Matt Smith', 'Game Graphics', 'Past project', '60(C+)', 'Joe Bloggs'),
-(3, 'B0003', 'Matt Smith', 'Game Graphics', 'Present Project', '85(A)', 'Bertie Ahern');
+INSERT INTO `students` (`id`, `studentNumber`, `supervisor`, `project`, `status`, `grade`, `name`, `publication`, `image`) VALUES
+(1, 'G00005', 'Luke Raeside', 'Game Development', 'Present Project', '76 (B+)', 'James Malervy', '', 'me.jpg'),
+(2, 'G00006', 'Luke Raeside', 'Game Development', 'Present Project', '76 (B+)', 'James kelly', '', ''),
+(3, 'B0003', 'Matt Smith', 'Game Graphics', 'Present Project', '85(A)', 'Bertie Ahern', '', '');
 
 --
 -- Indexes for dumped tables
@@ -574,7 +586,7 @@ ALTER TABLE `logs`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `pma__bookmark`
 --

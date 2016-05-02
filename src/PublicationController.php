@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Class PublicationController
  * @package Itb
- * publiction metho
+ * publication method
  */
 class PublicationController
 {

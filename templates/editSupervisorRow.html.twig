@@ -1,0 +1,80 @@
+{% extends '_base.html.twig' %}
+
+{# ----------------------------------------#}
+{% block title %}
+    page - edit Supervisor
+{% endblock %}
+
+{# ----------------------------------------#}
+{% block projectsNavStyle %}current_page{% endblock %}
+
+{# ----------------------------------------#}
+{% block main %}
+
+
+
+    <form method="post" action="/editSupervisorDetails">
+
+
+
+        <p>
+             Id:
+            <br>
+            <input type="text" name="id" value="{{ supervisorRow.id }}">
+        </p>
+
+        <p>
+            Student ID:
+            <br>
+            <input type="text" name="studentId" value="{{ supervisorRow.studentId }}">
+        </p>
+
+        <p>
+            Project:
+            <br>
+            <input type="text" name="project" value="{{ supervisorRow.projec }}">
+        </p>
+
+        <p>
+            Status:
+            <br>
+            <input type="text" name="status" value="{{ supervisorRow.status }}">
+        </p>
+
+        <p>
+        Past Present:
+        <br>
+        <input type="text" name="pastPresent" value="{{ supervisorRow.pastPresent }}">
+        </p>
+
+        <p>
+            Name:
+            <br>
+            <input type="text" name="name" value="{{ supervisorRow.name }}">
+        </p>
+
+        <p>
+            Publications:
+            <br>
+            <input type="text" name="publications" value="{{ supervisorRow.publications }}">
+        </p>
+
+
+
+        <p>
+
+
+            <input type="submit"  value="Edit">
+        </p>
+
+
+
+    </form>
+
+
+
+
+
+
+
+{% endblock %}

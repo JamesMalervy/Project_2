@@ -25,11 +25,11 @@ $app->get('/publications', \Itb\Utility::controller('Itb', 'publication/publicat
 $app->post('/log', \Itb\Utility::controller('Itb', 'main/log'));
 $app->get('/admin', \Itb\Utility::controller('Itb', 'main/adminPage'));
 $app->get('/student', \Itb\Utility::controller('Itb', 'main/studentPage'));
-$app->get('/supervisor', \Itb\Utility::controller('Itb', 'main/supervisorPage'));
+//$app->get('/supervisor', \Itb\Utility::controller('Itb', 'main/supervisorPage'));
 $app->get('/logout', \Itb\Utility::controller('Itb', 'main/logout'));
 $app->get('/detail/{id}', \Itb\Utility::controller('Itb', 'main/detail'));
 $app->get('/projectDetail/{id}', \Itb\Utility::controller('Itb', 'project/projectDetail'));
-$app->get('/studentDetail/{id}', \Itb\Utility::controller('Itb', 'student/studentDetail'));
+
 
 $app->get('/editMemberTableDisplay', \Itb\Utility::controller('Itb', 'member/editMemberTableDisplay'));
 $app->get('/editMember/{id}', \Itb\Utility::controller('Itb', 'member/editMemberDisplay'));
@@ -40,7 +40,18 @@ $app->post('/newMember', \Itb\Utility::controller('Itb', 'member/newMember'));
 $app->get('/deleteMemberTableDisplay', \Itb\Utility::controller('Itb', 'member/deleteMemberTableDisplay'));
 $app->get('/deleteMember/{id}', \Itb\Utility::controller('Itb', 'member/deleteMember'));
 $app->get('/matt/{id}', \Itb\Utility::controller('Itb', 'main/matt'));
+
+$app->get('/studentDetail/{id}', \Itb\Utility::controller('Itb', 'student/studentDetail'));
+$app->get('/editStudent/{id}', \Itb\Utility::controller('Itb', 'student/editStudentDisplay'));
+$app->post('/editStudentDetails', \Itb\Utility::controller('Itb', 'student/editStudentDetails'));
+
 $app->post('/changePicture', \Itb\Utility::controller('Itb', 'student/changePicture'));
+
+$app->get('/supervisor', \Itb\Utility::controller('Itb', 'supervisor/supervisorPage'));
+$app->get('/editSupervisor/{id}', \Itb\Utility::controller('Itb', 'supervisor/editSupervisorDisplay'));
+$app->post('/editSupervisorDetails', \Itb\Utility::controller('Itb', 'supervisor/editSupervisorDetails'));
+$app->get('/supervisorCreate', \Itb\Utility::controller('Itb', 'supervisor/supervisorCreate'));
+$app->post('/newSupervisor', \Itb\Utility::controller('Itb', 'supervisor/newSupervisor'));
 
 
   /*switch ($action){
@@ -69,4 +80,5 @@ $app->error(function (\Exception $e, $code) use ($app) {
 
 // run Silex front controller
 // ------------
+
 $app->run();

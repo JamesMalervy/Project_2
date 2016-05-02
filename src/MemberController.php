@@ -17,7 +17,6 @@ use Symfony\Component\HttpFoundation\Response;
 class MemberController
 {
 
-
     /**
      * render the edit page
      * @param Request $request

@@ -172,21 +172,29 @@ class MainController
      * @return mixed
      *
      */
-    public function supervisorPageAction(Request $request, Application $app)
+ /*   public function supervisorPageAction(Request $request, Application $app)
     {
         $user = $app['session']->get('user');
 
-
+        $supervisors = Supervisor::getAll();
 
 
         $argsArray = array(
-            'username' => $user['username']
+        'supervisors' => $supervisors,
+           'username' => $user['username']
 
-        );
+       );
+
+
+      //  $argsArray = array(
+      //      'username' => $user['username']
+
+      // );
 
         $templateName = 'supervisor';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
-    }
+    }  */
+
 
     // action for route:    /logout
     /**

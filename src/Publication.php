@@ -1,5 +1,8 @@
 <?php
 /**
+ * publication class
+ */
+/**
  * Created by PhpStorm.
  * User: James
  * Date: 23/03/2016

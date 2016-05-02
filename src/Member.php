@@ -65,6 +65,55 @@ class Member extends DatabaseTable
      */
     private $name;
 
+    /**
+     * publication
+     * @var
+     */
+    private $publication;
+
+    /**
+     * get publication
+     * @return mixed
+     */
+    public function getPublication()
+    {
+        return $this->publication;
+    }
+
+    /**
+     * set the publication
+     * @param mixed $publication
+     */
+    public function setPublication($publication)
+    {
+        $this->publication = $publication;
+    }
+
+    /**
+     * image
+     * @var
+     */
+    private $image;
+
+    /**
+     * get image
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * set image
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+
 
 
     /**
